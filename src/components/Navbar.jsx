@@ -1,7 +1,6 @@
-import './Start.css'
+import './Navbar.css'
 
-function Inicio() {
-
+function Navbar() {
     return (
         <div>
             <h1>Página inicial</h1>
@@ -9,4 +8,4 @@ function Inicio() {
     )
 }
 
-export default Inicio;
+export default Navbar;

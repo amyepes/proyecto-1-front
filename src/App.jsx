@@ -2,10 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router'
 import Inicio from './pages/Start'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
+    <>
+    <Navbar/>
+    
     <Routes>
       <Route path="/" element={Inicio} />
       <Route path="/Explorar" element={Exploración} />
@@ -14,6 +18,7 @@ function App() {
       <Route path="/Contactanos" element={Contacto} />
       <Route path="*" element={ErrorNotFound} />
     </Routes>
+    </>
   )
 }
 
