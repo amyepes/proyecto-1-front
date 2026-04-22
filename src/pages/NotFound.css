@@ -1,0 +1,25 @@
+.bg {
+min-height: calc(100vh - 84px);
+background: #f1f5f9;
+display: flow-root;
+padding-top: 1px;
+}
+
+.bg h1 {
+    color: var(--blue-color);
+    margin-bottom: 10px;
+    font-size: 100px;
+}
+
+.bg h2 {
+    color: black;
+    margin: 0;
+}
+
+.bg p {
+    margin-top: 8px;
+}
+
+.bg-btn {
+    margin-top: 20px;
+}

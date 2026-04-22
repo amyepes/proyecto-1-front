@@ -21,8 +21,7 @@ html,body,#root{
 .app-shell {
 min-height: 100vh;
 background: linear-gradient(158deg, #111a2c 0%, #1b2537 50%, #0f182b 100%);
-background-attachment: fixed;
-background-size: cover;
+
 }
 
 p {

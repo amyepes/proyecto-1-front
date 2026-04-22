@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router'
 import './App.css'
 import Inicio from './pages/Start'
 import Navbar from './components/Navbar'
+import NotFound from './pages/NotFound'
 
 function PlaceholderPage({ title, description }) {
   return (
@@ -56,15 +57,7 @@ function App() {
             />
           }
         />
-        <Route
-          path="*"
-          element={
-            <PlaceholderPage
-              title="404"
-              description="La ruta solicitada no existe."
-            />
-          }
-        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   )
