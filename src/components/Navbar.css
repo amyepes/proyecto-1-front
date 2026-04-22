@@ -1,24 +1,7 @@
-.logo-txt {
-  font-size: xx-large;
-  margin: 0;
-  color: var(--blue-color);
-}
-
-.logo-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.logo-icon {
-  width: 1.2em;
-  height: 1.2em;
-  flex-shrink: 0;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #0f172a;
   padding: 1rem 2rem 0.8rem 2rem;
   position: sticky;
@@ -28,8 +11,11 @@
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 2vw;
+  margin: 0;
+  padding: 0;
 }
 
 .special-li {
