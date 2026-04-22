@@ -1,10 +1,22 @@
+import { Link } from 'react-router'
 import './Navbar.css'
 
 function Navbar() {
     return (
-        <div>
-            <h1>Página inicial</h1>
-        </div>
+        <nav className='navbar'>
+            <h5 className="logo">Explorador</h5>
+
+            <ul className="nav-links">
+                {/*<li><a href="#inicio" className="active">Inicio</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>*/}
+                <li><Link to={"/"}>Inicio</Link></li>
+                <li><Link to={"/Explorar"}>Explorar</Link></li>
+                <li><Link to={"/Favoritos"}>Favoritos</Link></li>
+                <li>|</li>
+                <li className='special-li'><Link to={"/Contactanos"}>Contacto</Link></li>
+            </ul>
+        </nav>
     )
 }
 
