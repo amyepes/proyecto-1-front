@@ -14,7 +14,7 @@ function Navbar() {
                 <li><Link to={"/"}>Inicio</Link></li>
                 <li><Link to={"/Explorar"}>Explorar</Link></li>
                 <li><Link to={"/Favoritos"}>Favoritos</Link></li>
-                <li>|</li>
+                {/*<li>|</li>*/}
                 <li className='special-li'><Link to={"/Contactanos"}>Contacto</Link></li>
             </ul>
         </nav>
