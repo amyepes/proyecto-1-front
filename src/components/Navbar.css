@@ -1,7 +1,19 @@
-.logo {
+.logo-txt {
   font-size: xx-large;
   margin: 0;
   color: var(--blue-color);
+}
+
+.logo-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.logo-icon {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
 }
 
 .navbar {
