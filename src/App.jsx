@@ -3,6 +3,7 @@ import './App.css'
 import Inicio from './pages/Start'
 import Navbar from './components/Navbar'
 import NotFound from './pages/NotFound'
+import Explorar from './pages/Explore'
 
 function PlaceholderPage({ title, description }) {
   return (
@@ -23,12 +24,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route
           path="/Explorar"
-          element={
-            <PlaceholderPage
-              title="Explorar"
-              description="Sección en construcción para mostrar el catálogo o contenido principal."
-            />
-          }
+          element={<Explorar />}
         />
         <Route
           path="/Detalle/:id"
