@@ -15,7 +15,7 @@ function Card({ fruta }) {
             </div>
             <button
                 className={`favorite-btn ${isCurrentlyFavorite ? 'active' : ''}`}
-                onClick={() => toggleFavorite(fruta.id)}
+                onClick={() => toggleFavorite(fruta)}
                 title={isCurrentlyFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
             >
                 ★
