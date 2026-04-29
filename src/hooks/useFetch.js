@@ -8,25 +8,26 @@ function useFetch(url) {
         const controller = new AbortController();
 
         async function cargar() {
-            setEstado({cargando: true, error: null});
+            setFrutas([]);
+            setEstado({ cargando: true, error: null });
 
             try {
-                const res = await fetch(url, {signal: controller.signal,});
+                const res = await fetch(url, { signal: controller.signal });
                 if (!res.ok) throw new Error("Error en la respuesta");
                 const datos = await res.json();
                 setFrutas(datos);
-                setEstado({cargando: false, error: false})
+                setEstado({ cargando: false, error: null });
             } catch (err) {
                 if (err.name === 'AbortError') return;
-                setEstado({cargando: false, error: err.message})
+                setEstado({ cargando: false, error: err.message });
             }
         }
         cargar();
         // Cleanup: cancela el fetch si el componente se desmonta (tomado de la diapo :D)
         return () => controller.abort();
-    }, [])
+    }, [url]);
 
-    return {frutas, ...estado}
+    return { frutas, ...estado };
 }
 
 export default useFetch;

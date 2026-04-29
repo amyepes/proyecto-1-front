@@ -1,5 +1,6 @@
 import './Contact.css';
 import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 function Contacto() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,12 +74,14 @@ function Contacto() {
 
             await new Promise(resolve => setTimeout(resolve, 1500));
 
+            // Mostrar toast de éxito (era más fácil de lo que pensé XD)
+            toast.success('Mensaje enviado!');
+
             // Limpiar campos después de enviar
             setFormData({ name: '', email: '', message: '' });
             setErrors({});
             setIsSubmitting(false);
 
-            // TODO: aquí puedes agregar lógica adicional (ej. enviar a API, mostrar notificación)
         } catch (error) {
             setErrors((currentErrors) => ({
                 ...currentErrors,
@@ -96,8 +99,8 @@ function Contacto() {
     return (
         <div className="login-container">
             <div className="login-card">
-                <h1 className="login-title">Inicia Sesión</h1>
-                <p className="login-subtitle">Accede a tu cuenta para continuar</p>
+                <h1 className="login-title">Contacto</h1>
+                <p className="login-subtitle">Tienes preguntas o sugerencias? Envianos un mensaje.</p>
 
                 <form onSubmit={onSubmit} className="login-form">
                     <div className="form-group">
@@ -160,11 +163,7 @@ function Contacto() {
                         ) : (
                             'Enviar mensaje'
                         )}
-                    </button>
-
-                    <div className="back-link">
-                        <a href="/">Volver al inicio</a>
-                    </div>
+                    </button>                   
                 </form>
             </div>
         </div>
