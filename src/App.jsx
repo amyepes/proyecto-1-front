@@ -4,6 +4,7 @@ import Inicio from './pages/Start'
 import Navbar from './components/Navbar'
 import NotFound from './pages/NotFound'
 import Explorar from './pages/Explore'
+import Contacto from './pages/Contact'
 
 function PlaceholderPage({ title, description }) {
   return (
@@ -46,12 +47,7 @@ function App() {
         />
         <Route
           path="/Contactanos"
-          element={
-            <PlaceholderPage
-              title="Contáctanos"
-              description="Página de contacto pendiente de implementar."
-            />
-          }
+          element={<Contacto />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
