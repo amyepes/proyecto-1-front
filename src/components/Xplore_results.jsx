@@ -1,8 +1,10 @@
 import Cargando from './Loading';
 import ErrorPage from './Error';
+import Card from './Card';
 import useFetch from '../hooks/useFetch';
 import { toast } from 'react-hot-toast';
 import { useEffect, useRef } from 'react';
+import './Xplore_results.css';
 
 function XploreResults() {
     const { frutas, cargando, error } = useFetch("https://api.api-onepiece.com/v2/fruits/en");
@@ -32,17 +34,13 @@ function XploreResults() {
     if (cargando) return <Cargando />;
 
     return (
-        <>
-            <h1>Frutas del diablo</h1>
-            <ul>
+        <div className="explore-container">
+            <div className="fruits-grid">
                 {frutas.map((fruta) => (
-                    <li key={fruta.id}>
-                        <h2>{fruta.name}</h2>
-                        <p>{fruta.description}</p>
-                    </li>
+                    <Card key={fruta.id} fruta={fruta} />
                 ))}
-            </ul>
-        </>
+            </div>
+        </div>
     );
 }
 
