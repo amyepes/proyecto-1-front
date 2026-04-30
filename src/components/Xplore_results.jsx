@@ -6,9 +6,15 @@ import { toast } from 'react-hot-toast';
 import { useEffect, useRef } from 'react';
 import './Xplore_results.css';
 
-function XploreResults() {
+function XploreResults({ searchQuery, selectedType }) {
     const { frutas, cargando, error } = useFetch("https://api.api-onepiece.com/v2/fruits/en");
     const toastShownRef = useRef(false);
+
+    const filteredFrutas = frutas.filter((fruta) => {
+        const matchesSearch = fruta.name.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesType = selectedType === '' || fruta.type === selectedType;
+        return matchesSearch && matchesType;
+    });
 
     useEffect(() => {
         if (cargando) {
@@ -36,7 +42,7 @@ function XploreResults() {
     return (
         <div className="explore-container">
             <div className="fruits-grid">
-                {frutas.map((fruta) => (
+                {filteredFrutas.map((fruta) => (
                     <Card key={fruta.id} fruta={fruta} />
                 ))}
             </div>
@@ -45,5 +51,3 @@ function XploreResults() {
 }
 
 export default XploreResults;
-
-// Falta apliucar estilos, pero por ahora se muestra la información de las frutas del diablo en bruto.

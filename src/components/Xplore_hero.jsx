@@ -1,6 +1,6 @@
 
 
-function XploreHero() {
+function XploreHero({ searchQuery, setSearchQuery, selectedType, setSelectedType }) {
     return (
         <div className="xplore-hero">
             <h1>¡Explora el mundo de las <span className="highlight">frutas del diablo</span>!</h1>
@@ -8,17 +8,26 @@ function XploreHero() {
             <p>Datos obtenidos de la API de One Piece.</p>
 
             <div>
-                <input type="text" placeholder="Buscar fruta..." className="search-input" />
-                <button className="search-btn">Buscar</button>
+                <input 
+                    type="text" 
+                    placeholder="Buscar fruta..." 
+                    className="search-input" 
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
 
                 <div className="filter-options">
                     <label>
                         Tipo:
-                        <select>
+                        <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
                             <option value="">Todos</option>
                             <option value="Paramecia">Paramecia</option>
                             <option value="Logia">Logia</option>
                             <option value="Zoan">Zoan</option>
+                            <option value="Zoan Antique">Zoan Antique</option>
+                            <option value="Zoan Mythique">Zoan Mythical</option>
+                            <option value="Smile">Smile</option>
+                            <option value="Clone">Clone</option>
                         </select>
                     </label>
                 </div>
