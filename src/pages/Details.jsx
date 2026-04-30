@@ -9,7 +9,7 @@ import FavoriteButton from '../components/FavoriteButton';
 
 function Detalle() {
     const { id } = useParams();
-    const { fruta, cargando, error } = useFetchI("https://api.api-onepiece.com/v2/fruits/en/{}".replace("{}", id));
+    const { fruta, cargando, error, retry } = useFetchI("https://api.api-onepiece.com/v2/fruits/en/{}".replace("{}", id));
     const toastShownRef = useRef(false);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ function Detalle() {
         }
     }, [cargando, error, fruta]);
 
-    if (error) return <ErrorPage ErrorInfo={error} />;
+    if (error) return <ErrorPage ErrorInfo={error} onRetry={retry} />;
     if (cargando) return <Cargando />;
 
     return (

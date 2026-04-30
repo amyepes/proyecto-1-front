@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react';
 import './Xplore_results.css';
 
 function XploreResults({ searchQuery, selectedType }) {
-    const { frutas, cargando, error } = useFetch("https://api.api-onepiece.com/v2/fruits/en");
+    const { frutas, cargando, error, retry } = useFetch("https://api.api-onepiece.com/v2/fruits/en");
     const toastShownRef = useRef(false);
 
     const filteredFrutas = frutas.filter((fruta) => {
@@ -36,7 +36,7 @@ function XploreResults({ searchQuery, selectedType }) {
         }
     }, [cargando, error, frutas]);
 
-    if (error) return <ErrorPage ErrorInfo={error} />;
+    if (error) return <ErrorPage ErrorInfo={error} onRetry={retry} />;
     if (cargando) return <Cargando />;
 
     return (
