@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import useFavorites from '../hooks/useFavorites';
 import './FavoriteButton.css';
+import { toast } from 'react-hot-toast';
 
 function FavoriteButton({ fruit, variant = 'icon' }) {
     const dialogRef = useRef(null);
@@ -21,6 +22,7 @@ function FavoriteButton({ fruit, variant = 'icon' }) {
     const handleFavoriteClick = () => {
         if (!favorite) {
             addFavorite(fruit);
+            toast.success(`${fruit.name} agregado a favoritos`);
             return;
         }
 
@@ -29,6 +31,7 @@ function FavoriteButton({ fruit, variant = 'icon' }) {
 
     const handleRemoveFavorite = () => {
         removeFavorite(fruit.id);
+        toast(`${fruit.name} quitado de favoritos`);
         dialogRef.current?.close();
     };
 
