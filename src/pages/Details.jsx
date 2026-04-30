@@ -5,6 +5,7 @@ import ErrorPage from '../components/Error';
 import { Link } from "react-router-dom";
 import { toast } from 'react-hot-toast';
 import { useEffect, useRef } from 'react';
+import FavoriteButton from '../components/FavoriteButton';
 
 function Detalle() {
     const { id } = useParams();
@@ -50,6 +51,7 @@ function Detalle() {
                     <p><span>Descripción:</span> {fruta.description}</p>
                     <p><span>Nombre romano:</span> {fruta.roman_name}</p>
                     <p><span>Tipo:</span> {fruta.type}</p>
+                    <FavoriteButton fruit={fruta} variant="details" />
                 </div>
             </div>
         </>

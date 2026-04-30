@@ -1,0 +1,137 @@
+.favorite-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6e6e78;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.favorite-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+.favorite-btn.active {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+}
+
+.favorite-btn.active:hover {
+    background: rgba(255, 215, 0, 0.25);
+}
+
+.favorite-btn--details {
+    position: static;
+    width: auto;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.favorite-dialog {
+    border: none;
+    border-radius: 16px;
+    padding: 0;
+    max-width: min(92vw, 420px);
+    width: 100%;
+    background: #111a2c;
+    color: #ffffff;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    margin: auto;
+    inset: 0;
+    position: fixed;
+}
+
+.favorite-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.favorite-dialog__content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.favorite-dialog__content h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.favorite-dialog__content p {
+    margin: 0 0 1.25rem;
+    color: #d0d0d0;
+    line-height: 1.5;
+}
+
+.favorite-dialog__actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.favorite-dialog__cancel,
+.favorite-dialog__remove {
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    min-width: 140px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+
+.favorite-dialog__cancel {
+    background: #d1d5db;
+    color: #111827;
+}
+
+.favorite-dialog__remove {
+    background: #e94560;
+    color: #ffffff;
+}
+
+.favorite-dialog__cancel:hover,
+.favorite-dialog__remove:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.favorite-dialog__cancel:focus-visible,
+.favorite-dialog__remove:focus-visible,
+.favorite-btn:focus-visible {
+    outline: 3px solid rgba(32, 198, 222, 0.85);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .favorite-btn--details {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .favorite-dialog__actions {
+        flex-direction: column-reverse;
+    }
+
+    .favorite-dialog__cancel,
+    .favorite-dialog__remove {
+        width: 100%;
+    }
+}
