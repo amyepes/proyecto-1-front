@@ -1,4 +1,3 @@
-import { Link } from 'react-router'
 import { useState } from 'react';
 import XploreHero from '../components/Xplore_hero';
 import XploreResults from '../components/Xplore_results';
