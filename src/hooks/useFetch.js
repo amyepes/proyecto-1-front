@@ -30,4 +30,34 @@ function useFetch(url) {
     return { frutas, ...estado };
 }
 
-export default useFetch;
+function useFetchI(url) {
+    const [fruta, setFruta] = useState();
+    const [estado, setEstado] = useState({ cargando: true, error: null });
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        async function cargar() {
+            setFruta([]);
+            setEstado({ cargando: true, error: null });
+
+            try {
+                const res = await fetch(url, { signal: controller.signal });
+                if (!res.ok) throw new Error("Error en la respuesta");
+                const datos = await res.json();
+                setFruta(datos);
+                setEstado({ cargando: false, error: null });
+            } catch (err) {
+                if (err.name === 'AbortError') return;
+                setEstado({ cargando: false, error: err.message });
+            }
+        }
+        cargar();
+        // Cleanup: cancela el fetch si el componente se desmonta (tomado de la diapo :D)
+        return () => controller.abort();
+    }, [url]);
+
+    return { fruta, ...estado };
+}
+
+export { useFetch, useFetchI };

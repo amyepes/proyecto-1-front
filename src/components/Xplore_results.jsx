@@ -1,7 +1,7 @@
 import Cargando from './Loading';
 import ErrorPage from './Error';
 import Card from './Card';
-import useFetch from '../hooks/useFetch';
+import { useFetch } from '../hooks/useFetch';
 import { toast } from 'react-hot-toast';
 import { useEffect, useRef } from 'react';
 import './Xplore_results.css';

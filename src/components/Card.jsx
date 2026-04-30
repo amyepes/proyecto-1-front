@@ -1,4 +1,5 @@
 import useFavorites from '../hooks/useFavorites';
+import { Link } from 'react-router-dom';
 
 function Card({ fruta }) {
     const { isFavorite, toggleFavorite } = useFavorites();
@@ -6,13 +7,15 @@ function Card({ fruta }) {
 
     return (
         <div className="card">
-            <div className="card-image">
-                {fruta.filename && fruta.filename.trim() ? (
-                    <img src={fruta.filename} alt={fruta.name} />
-                ) : (
+            <Link to={`/Detalle/${fruta.id}`}>
+                <div className="card-image">
+                    {fruta.filename && fruta.filename.trim() ? (
+                        <img src={fruta.filename} alt={fruta.name} />
+                    ) : (
                     <div className="no-image">Imagen sin añadir</div>
                 )}
             </div>
+            </Link>
             <button
                 className={`favorite-btn ${isCurrentlyFavorite ? 'active' : ''}`}
                 onClick={() => toggleFavorite(fruta)}

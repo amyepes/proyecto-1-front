@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound'
 import Explorar from './pages/Explore'
 import Contacto from './pages/Contact'
 import Favoritos from './pages/Favorites'
+import Detalle from './pages/Details'
 
 function PlaceholderPage({ title, description }) {
   return (
@@ -25,15 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/Explorar" element={<Explorar />} />
-        <Route
-          path="/Detalle/:id"
-          element={
-            <PlaceholderPage
-              title="Detalle"
-              description="Vista de detalle pendiente de implementar."
-            />
-          }
-        />
+        <Route path="/Detalle/:id" element={ <Detalle />} />
         <Route path="/Favoritos" element={<Favoritos />} />
         <Route path="/Contactanos" element={<Contacto />} />
         <Route path="*" element={<NotFound />} />
