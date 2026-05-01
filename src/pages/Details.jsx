@@ -36,26 +36,60 @@ function Detalle() {
     if (cargando) return <Cargando />;
 
     return (
-        <div className="min-h-screen bg-gradient-app px-4 py-8 text-white">
-            <p><Link to="/Explorar">Volver a explorar</Link></p>
-            <div className="flex-box">
-                <div className="card-image">
+        <div className="min-h-screen  px-4 py-12 flex flex-col items-center font-sans">
+            <div className="w-full max-w-4xl mb-6">
+                <Link 
+                    to="/Explorar" 
+                    className="text-blue-brand font-semibold hover:underline flex items-center gap-2 text-sm"
+                >
+                    &larr; Volver a explorar
+                </Link>
+            </div>
+
+            <div className="w-full max-w-4xl bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row overflow-hidden">
+                
+                <div className="w-full md:w-[45%] h-72 md:h-auto shrink-0 bg-slate-100">
                     {fruta.filename && fruta.filename.trim() ? (
-                        <img src={fruta.filename} alt={fruta.name} />
+                        <img 
+                            src={fruta.filename} 
+                            alt={fruta.name} 
+                            className="w-full h-full object-cover" 
+                        />
                     ) : (
-                        <div className="no-image">Imagen sin añadir</div>
+                        <div className="w-full h-full flex items-center justify-center text-slate-400 font-medium">
+                            Imagen sin añadir
+                        </div>
                     )}
                 </div>
-                <div>
-                    <h1>{fruta.name}</h1>
-                    <p><span>Descripción:</span> {fruta.description}</p>
-                    <p><span>Nombre romano:</span> {fruta.roman_name}</p>
-                    <p><span>Tipo:</span> {fruta.type}</p>
-                    <FavoriteButton fruit={fruta} variant="details" />
+                
+                <div className="w-full p-8 md:p-10 flex flex-col justify-center">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-[#0e172a] mb-6">
+                        {fruta.name}
+                    </h1>
+                    
+                    <div className="flex flex-col gap-3 mb-8">
+                        <p className="text-slate-800 font-medium text-sm md:text-base">
+                            <span className="text-slate-500 font-normal mr-2">Descripción:</span> 
+                            {fruta.description}
+                        </p>
+                        <p className="text-slate-800 font-medium text-sm md:text-base">
+                            <span className="text-slate-500 font-normal mr-2">Nombre romano:</span> 
+                            {fruta.roman_name}
+                        </p>
+                        <p className="text-slate-800 font-medium text-sm md:text-base">
+                            <span className="text-slate-500 font-normal mr-2">Tipo:</span> 
+                            {fruta.type}
+                        </p>
+                    </div>
+                    
+                    <div className="mt-2">
+                        <FavoriteButton fruit={fruta} variant="details" />
+                    </div>
                 </div>
+                
             </div>
         </div>
-    )
+    );
 }
 
 export default Detalle;
