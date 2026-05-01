@@ -46,9 +46,9 @@ function Detalle() {
                 </Link>
             </div>
 
-            <div className="w-full max-w-4xl bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row overflow-hidden">
+            <div className="w-full max-w-4xl bg-white/5 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row overflow-hidden">
                 
-                <div className="w-full md:w-[45%] h-72 md:h-auto shrink-0 bg-slate-100">
+                <div className="w-full md:w-[45%] h-72 md:h-auto shrink-0 bg-black/30">
                     {fruta.filename && fruta.filename.trim() ? (
                         <img 
                             src={fruta.filename} 
@@ -63,21 +63,21 @@ function Detalle() {
                 </div>
                 
                 <div className="w-full p-8 md:p-10 flex flex-col justify-center">
-                    <h1 className="text-3xl md:text-4xl font-extrabold text-[#0e172a] mb-6">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
                         {fruta.name}
                     </h1>
                     
                     <div className="flex flex-col gap-3 mb-8">
-                        <p className="text-slate-800 font-medium text-sm md:text-base">
-                            <span className="text-slate-500 font-normal mr-2">Descripción:</span> 
+                        <p className="text-slate-300 font-medium text-sm md:text-base">
+                            <span className="text-blue-brand font-normal mr-2">Descripción:</span> 
                             {fruta.description}
                         </p>
-                        <p className="text-slate-800 font-medium text-sm md:text-base">
-                            <span className="text-slate-500 font-normal mr-2">Nombre romano:</span> 
+                        <p className="text-slate-300 font-medium text-sm md:text-base">
+                            <span className="text-blue-brand font-normal mr-2">Nombre romano:</span> 
                             {fruta.roman_name}
                         </p>
-                        <p className="text-slate-800 font-medium text-sm md:text-base">
-                            <span className="text-slate-500 font-normal mr-2">Tipo:</span> 
+                        <p className="text-slate-300 font-medium text-sm md:text-base">
+                            <span className="text-blue-brand font-normal mr-2">Tipo:</span> 
                             {fruta.type}
                         </p>
                     </div>
