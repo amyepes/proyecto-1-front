@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router'
-import './App.css'
+//import './App.css'
 import Inicio from './pages/Start'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -12,7 +12,7 @@ import Detalle from './pages/Details'
 function App() {
 
   return (
-    <div className="app-shell flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gradient-app">
       <Navbar />
 
       <main className="flex-grow pt-4 sm:pt-6 lg:pt-8">

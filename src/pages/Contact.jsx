@@ -101,16 +101,16 @@ function Contacto() {
     const fieldBorder = (hasError) =>
         hasError
             ? 'border-red-400 focus:border-red-400'
-            : 'border-[var(--blue-color)] focus:border-[var(--blue-color)]';
+            : 'border-blue-brand focus:border-blue-brand';
 
     const statusText = 'mt-1 text-sm font-medium';
 
     return (
-        <div className="min-h-screen bg-[var(--gradient-color)] px-4 py-10 flex items-center justify-center sm:px-6 lg:px-8">
-            <div className="w-full max-w-2xl rounded-2xl border border-[var(--blue-color)] bg-slate-950/70 p-6 shadow-2xl shadow-cyan-500/10 backdrop-blur-md sm:p-8 lg:p-10">
+        <div className="min-h-screen px-4 py-10 flex items-center justify-center sm:px-6 lg:px-8">
+            <div className="w-full max-w-2xl rounded-2xl border border-blue-brand bg-slate-950/70 p-6 shadow-2xl shadow-cyan-500/10 backdrop-blur-md sm:p-8 lg:p-10">
                 <div className="mb-8 text-left sm:mb-10">
                     <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contacto</h1>
-                    <p className="mt-3 text-sm text-[var(--sub-text-color)] sm:text-base">
+                    <p className="mt-3 text-sm text-sub-text sm:text-base">
                         Tienes preguntas o sugerencias? Envíanos un mensaje.
                     </p>
                 </div>
@@ -203,7 +203,7 @@ function Contacto() {
                         type="submit"
                         className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold text-slate-950 transition sm:w-auto ${
                             isFormValid && !isSubmitting
-                                ? 'bg-[var(--blue-color)] hover:brightness-110'
+                                ? 'bg-blue-brand hover:brightness-110'
                                 : 'cursor-not-allowed bg-slate-700 text-slate-300'
                         }`}
                         disabled={!isFormValid || isSubmitting}

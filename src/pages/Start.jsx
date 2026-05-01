@@ -6,7 +6,7 @@ function Inicio() {
     return (
         <>
             <AdBlockerModal />
-            <section className='min-h-[42vh] pt-[5vh] text-center'>
+            <section className='min-h-[42vh] bg-gradient-app pt-[5vh] text-center'>
             <h1 className='text-4xl md:text-5xl font-bold mb-6 text-white'>Descubrí el <span className='text-cyan-400'>Universo</span> de One Piece</h1>
             <p className='px-[29vw] mx-[3%] text-lg text-slate-300 mb-8'>Explorá datos fascinantes de la One Piece API. Buscá, filtrá y guardá tus favoritos, bóludo.</p>
             <Link to="/Explorar">

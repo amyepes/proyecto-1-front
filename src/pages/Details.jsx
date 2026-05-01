@@ -36,7 +36,7 @@ function Detalle() {
     if (cargando) return <Cargando />;
 
     return (
-        <>
+        <div className="min-h-screen bg-gradient-app px-4 py-8 text-white">
             <p><Link to="/Explorar">Volver a explorar</Link></p>
             <div className="flex-box">
                 <div className="card-image">
@@ -54,7 +54,7 @@ function Detalle() {
                     <FavoriteButton fruit={fruta} variant="details" />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
