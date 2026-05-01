@@ -12,10 +12,10 @@ import Detalle from './pages/Details'
 function App() {
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-app">
+    <div className="flex flex-col min-h-screen bg-gradient-color">
       <Navbar />
 
-      <main className="flex-grow pt-4 sm:pt-6 lg:pt-8">
+      <main className="grow pt-4 sm:pt-6 lg:pt-8">
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/Explorar" element={<Explorar />} />
