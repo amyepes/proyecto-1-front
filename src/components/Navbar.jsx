@@ -6,7 +6,7 @@ function Navbar() {
         [
             'relative inline-flex items-center px-1 py-2 text-sm font-medium transition-all duration-200 sm:text-base',
             'text-slate-300 hover:text-white',
-            'after:absolute after:inset-x-1 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-[var(--blue-color)] after:transition-all after:duration-200',
+            'after:absolute after:inset-x-1 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-blue-brand after:transition-all after:duration-200',
             isActive
                 ? 'text-white after:scale-x-100 after:opacity-100'
                 : 'after:scale-x-0 after:opacity-0 hover:after:scale-x-100 hover:after:opacity-100',

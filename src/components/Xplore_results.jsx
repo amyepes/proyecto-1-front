@@ -4,7 +4,6 @@ import Card from './Card';
 import { useFetch } from '../hooks/useFetch';
 import { toast } from 'react-hot-toast';
 import { useEffect, useRef } from 'react';
-import './Xplore_results.css';
 
 function XploreResults({ searchQuery, selectedType }) {
     const { frutas, cargando, error, retry } = useFetch("https://api.api-onepiece.com/v2/fruits/en");
@@ -40,8 +39,9 @@ function XploreResults({ searchQuery, selectedType }) {
     if (cargando) return <Cargando />;
 
     return (
-        <div className="explore-container">
-            <div className="fruits-grid">
+        <div className="w-full px-4 py-8 md:px-6 lg:px-8 max-w-7xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">Explorar Frutas</h1>
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8">
                 {filteredFrutas.map((fruta) => (
                     <Card key={fruta.id} fruta={fruta} />
                 ))}

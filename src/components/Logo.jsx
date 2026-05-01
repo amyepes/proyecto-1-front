@@ -1,6 +1,6 @@
 function Logo() {
 	return (
-		<h5 className="m-0 text-[xx-large] font-semibold text-[var(--blue-color)]">
+		<h5 className="m-0 text-[xx-large] font-semibold text-blue-brand">
 			<span className="inline-flex items-center gap-[0.45rem]" aria-label="Explorador">
 				<svg
 					className="h-[1.2em] w-[1.2em] shrink-0"
